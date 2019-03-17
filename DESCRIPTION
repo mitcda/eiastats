@@ -1,0 +1,22 @@
+Package: eiastats
+Type: Package
+Title: Access Energy Information Agency statistics via the EIA API.
+Description: An R package for downloading daata available from the
+  United States Energy Information Administration (EIA) API
+  (see <https://www.eia.gov/> and <https://www.eia.gov/opendata/>).
+Version: 0.0.0.9001
+Date: 2019-02-22
+Authors@R: c(
+  person("David", "Mitchell", email = "david.pk.mitchell@gmail.com", role = c("aut", "cre"))
+  )
+Maintainer: David Mitchell <david.pk.mitchell@gmail.com>
+URL: https://github.com/mitcda/eiastats
+License: GPL-3
+Depends: R (>= 3.0.0)
+Imports: dplyr, httr, jsonlite, lubridate, rvest, tibble
+Suggests: repo, knitr, rmarkdown, testthat, ggplot2
+LazyData: true
+RoxygenNote: 6.1.1
+VignetteBuilder: knitr
+NeedsCompilation: no
+Encoding: UTF-8

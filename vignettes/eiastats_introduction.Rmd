@@ -1,0 +1,58 @@
+---
+title: "Introduction to the eiastats package"
+author: "David Mitchell"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{01_-_Using_the_raustats_package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(collapse=TRUE, comment="#>")
+```
+
+```{r api-setup, echo=FALSE}
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(purl = NOT_CRAN)
+## Use `eval = NOT_CRAN` in any chunk that requires access to a secret.
+## See https://cran.r-project.org/web/packages/httr/vignettes/secrets.html
+##  for further details.
+```
+
+
+# Introduction
+
+The `eiastats` package provides access to data from the United States' Energy
+Information Administration (EIA). 
+
+```{r eval=FALSE}
+## This code works - consider leaving this for users to extract relevant data
+## Will deliver efficiencies, by first filtering before mapping and unnesting
+w <- z %>%
+  mutate(data = map(data,
+                    ~ .x %>% as_tibble(data, .name_repair="unique") %>%
+                      set_names(c("period","value"))
+                    ))
+y <- tidyr::unnest(w, data)
+```
+
+
+```{r eval=FALSE}
+## This code works - consider leaving this for users to extract relevant data
+## Will deliver efficiencies, by first filtering before mapping and unnesting
+w <- z %>%
+  mutate(data = map(data,
+                    ~ .x %>% as_tibble(data, .name_repair="unique") %>%
+                      set_names(c("period","value"))
+                    ))
+y <- tidyr::unnest(w, data)
+```
+
+
+## Managing API keys
+
+I use the `secret` package for managing the EIA API key.
+
+To use these ... 

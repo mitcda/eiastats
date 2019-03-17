@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+*~
+eia_apikey_functions.R
+data-raw/AEO2019.txt
+data-raw/AEO2019.zip
+data-raw/AEOtest.txt

@@ -1,0 +1,23 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+cran-comments.md
+README.Rmd
+README.html
+^Meta$
+^doc$
+# Rbuildignore
+# Ignore git repository
+^.git/$
+^.gitignore$
+^.Rhistory$
+^EXTRA-CODE$
+^README$
+^CHANGES$
+^Setup.R$
+^SQL.R$
+^misc.R$
+read-abs-discards.R
+^TODO$
+^R-example-code/$
+data-raw
+eia_apikey_functions.R

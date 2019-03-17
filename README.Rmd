@@ -1,0 +1,99 @@
+---
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# eiastats: An R package for accessing data from the U.S. Energy Information Administration
+
+An R package for searching and downloading datasets from the United States'
+Energy Information Administration (EIA) API.
+
+
+## Installation
+
+You can install the released version of eiastats from [CRAN](https://CRAN.R-project.org) with:
+
+```{r eval=FALSE}
+install.packages("eiastats")
+```
+or the latest development version from github with:
+
+```{r, eval = FALSE}
+remotes::install_github("mitcda/eiastats")
+```
+
+## How to use eaistats
+
+To learn more about the eiastats package, start with the vignettes:
+```{r, eval = FALSE}
+browseVignettes(package = "eaistats")
+```
+
+
+## Introduction
+
+This package provides functions to search and download data from the United
+States' Energy Information Administration's (EIA) API (see
+http://www.eia.gov/beta/api/).  There are currently over a million unique time
+series available through the API.  To use the package you'll need a *free* API
+key from here: http://www.eia.gov/beta/api/register.cfm.
+
+This package extends on the functions in the
+[https://cran.r-project.org/web/packages/EIAdata/index.html](EIAdata)
+package.^[The functionality in this package broadly mirrors the functionality
+available in the
+[https://cran.r-project.org/web/packages/wbstats/index.html](wbstats) package
+and the author's
+[https://cran.r-project.org/web/packages/raustats/index.html](raustats)
+package.]  Details of the EIA API are available at:
+https://www.eia.gov/opendata/commands.php.
+
+The package has four EIA catalogue-search/information type functions:
+  * `eia_search`
+  * `eia_bulk_browse`
+  * `eia_bulk_search`
+  * `eia_category_query`
+
+and four EIA data query functions, that return selected EIA datasets:
+  * `eia_series_query`
+  * `eia_relation_query`
+  * `eia_geoset_query`, and
+  * `eia_bulk_stats`.
+
+
+## Examples
+
+<!--
+ABS catalogue statistics may be downloaded, by catalogue number, using the
+`abs_cat_stats()` function. The following example downloads all Consumer Price Index
+(CPI) data series (ABS Catalogue no. 6401.0).
+
+-->
+
+```{r eval=FALSE}
+cpi_all <- abs_cat_stats("6401.0")
+```
+<!--
+To download only the latest statistics reported in Table 1 (ABS groups Tables 1 and
+2), simply provide a regular expression to the `tables` argument:
+-->
+
+```{r eval=FALSE}
+cpi <- abs_cat_stats("6401.0", tables="Table.+1")
+```
+<!--
+The package also provides functions to ABS statistics via the
+[ABS.Stat](http://stat.data.abs.gov.au/) Beta API. See the package help and
+vignettes for examples. 
+
+-->

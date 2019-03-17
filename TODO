@@ -1,0 +1,8 @@
+-*- mode: markdown -*-
+
+# TO DO
+
+## EIA utility functions
+
+* `eia_search` returns wrongly ordered/named column names: `name` should be
+   `frequency` and `frequency` should be `name`
